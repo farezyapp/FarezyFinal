@@ -7,25 +7,22 @@ export default defineConfig({
   plugins: [
     react(),
     runtimeErrorOverlay(),
-    ...(process.env.NODE_ENV !== "production" &&
-    process.env.REPL_ID !== undefined
+    ...(process.env.NODE_ENV !== "production" && process.env.REPL_ID !== undefined
       ? [
-          await import("@replit/vite-plugin-cartographer").then((m) =>
-            m.cartographer(),
-          ),
+          await import("@replit/vite-plugin-cartographer").then((m) => m.cartographer()),
         ]
       : []),
   ],
-  root: path.resolve(__dirname, "Client"), // <-- Set root to Client folder
+  root: path.resolve(__dirname),  // repo root where index.html is
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "Client/src"), // <-- alias to source code
+      "@": path.resolve(__dirname, "Client/src"),
       "@shared": path.resolve(__dirname, "shared"),
       "@assets": path.resolve(__dirname, "attached_assets"),
     },
   },
   build: {
-    outDir: path.resolve(__dirname, "dist/public"), // <-- build output folder
+    outDir: path.resolve(__dirname, "dist/public"),
     emptyOutDir: true,
   },
 });
