@@ -4,16 +4,18 @@ import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 export default defineConfig({
+  root: path.resolve(__dirname), // root is project root, where index.html is
   plugins: [
     react(),
     runtimeErrorOverlay(),
     ...(process.env.NODE_ENV !== "production" && process.env.REPL_ID !== undefined
       ? [
-          await import("@replit/vite-plugin-cartographer").then((m) => m.cartographer()),
+          await import("@replit/vite-plugin-cartographer").then((m) =>
+            m.cartographer(),
+          ),
         ]
       : []),
   ],
-  root: path.resolve(__dirname),  // repo root where index.html is
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "Client/src"),
@@ -24,5 +26,15 @@ export default defineConfig({
   build: {
     outDir: path.resolve(__dirname, "dist/public"),
     emptyOutDir: true,
+  },
+  // Tell Vite to use Client/src as base for modules when resolving in index.html
+  base: "./",
+  // You may need to specify the build input manually
+  build: {
+    outDir: path.resolve(__dirname, "dist/public"),
+    emptyOutDir: true,
+    rollupOptions: {
+      input: path.resolve(__dirname, "index.html"),
+    },
   },
 });
