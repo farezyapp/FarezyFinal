@@ -1,74 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Farezy - Compare Taxi & Rideshare Services</title>
-    <meta name="description" content="Find the best priced and quickest ride options by comparing taxi and rideshare services in real-time based on your current location." />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Farezy App</title>
+  <meta name="description" content="Farezy app built with React and Vite" />
+  <link rel="icon" href="/favicon.ico" />
+</head>
+<body>
+  <div id="root"></div>
 
-    <!-- PWA Meta Tags -->
-    <meta name="theme-color" content="#3b82f6" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="Farezy" />
-    <meta name="mobile-web-app-capable" content="yes" />
-
-    <!-- Open Graph tags -->
-    <meta property="og:title" content="Farezy - Compare Taxi & Rideshare Services" />
-    <meta property="og:description" content="Find the best priced and quickest ride options by comparing taxi and rideshare services in real-time." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/icons/icon-512x512.png" />
-
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Farezy - Compare Ride Prices" />
-    <meta name="twitter:description" content="Compare ride prices and find the best deals instantly" />
-    <meta name="twitter:image" content="/icons/icon-512x512.png" />
-
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="/manifest.json" />
-
-    <!-- Apple Touch Icons -->
-    <link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png" />
-    <link rel="apple-touch-icon" sizes="128x128" href="/icons/icon-128x128.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="/icons/icon-152x152.png" />
-    <link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png" />
-    <link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png" />
-    <link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png" />
-
-    <!-- Leaflet CSS -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-      crossorigin=""
-    />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-
-    <!-- Replit dev banner for development -->
-    <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
-
-    <!-- Farezy Driver WebSocket Integration -->
-    <script type="text/javascript">
-      // (Paste your entire FarezyDriverService class and all related functions here)
-      // For brevity, keep the exact code you provided for the FarezyDriverService class and connection logic
-
-      // Just make sure this script is placed after your main bundle so window.farezyDriverService etc. are available
-
-      // Example initialization:
-      window.farezyDriverService = new FarezyDriverService();
-      window.farezyDriverService.initialize();
-
-      // Initialize direct driver connection
-      // (Also use your existing functions: connectToDriverApp, sendBookingToDrivers, etc.)
-      // ...
-
-      // Feel free to call testDirectBooking() or testBooking() from browser console
-    </script>
-  </body>
+  <script type="module" src="./main.tsx"></script>
+</body>
 </html>
